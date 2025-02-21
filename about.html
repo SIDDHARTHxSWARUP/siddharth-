@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Welcome - Siddharth Swarup</title>
+  <title>About - Siddharth Swarup</title>
 
   <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Dancing+Script:wght@700&display=swap"
     rel="stylesheet"
   />
-  <!-- Font Awesome (for icons) -->
+  <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
   <style>
@@ -19,53 +19,22 @@
       padding: 0;
       box-sizing: border-box;
     }
-    html {
-      scroll-behavior: smooth;
-    }
     body {
       font-family: 'Poppins', sans-serif;
       color: #fff;
-      overflow-x: hidden;
       background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
         url('background.jpg') no-repeat center center;
       background-size: cover;
       background-attachment: fixed;
       transition: background 0.5s, color 0.5s;
     }
-    /* Light mode overrides */
+    /* Light mode toggle */
     body.light-mode {
       background: #f2f2f2;
       color: #000;
     }
-    body.light-mode .nav-bar {
-      background: rgba(255, 255, 255, 0.8);
-    }
-    body.light-mode .chat-box {
-      background: rgba(0, 0, 0, 0.8);
-    }
 
-    /* INTRO SCREEN */
-    .intro-screen {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      animation: fadeOut 2.5s ease-in-out forwards;
-    }
-    .intro-name {
-      font-family: 'Dancing Script', cursive;
-      font-size: 60px;
-      color: #000;
-    }
-    @keyframes fadeOut {
-      0%   { opacity: 1; }
-      100% { opacity: 0; visibility: hidden; }
-    }
-
-    /* NAVIGATION */
+    /* NAV BAR */
     .nav-bar {
       position: fixed;
       top: 0; left: 0;
@@ -113,7 +82,7 @@
       color: #ffd700;
       transform: scale(1.1);
     }
-    /* Theme Toggle Icon */
+    /* Dark/Light mode toggle icon */
     .theme-toggle {
       color: #ffd700;
       cursor: pointer;
@@ -124,103 +93,45 @@
       color: #333;
     }
 
-    /* HERO SECTION */
-    .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 20px;
-    }
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-      font-weight: 700;
-      animation: fadeInUp 1.5s forwards ease-in-out;
-      opacity: 0;
-    }
-    .hero .quote {
-      font-style: italic;
-      font-size: 20px;
-      color: #ffd700;
-      margin-bottom: 30px;
-      animation: fadeInUp 1.5s forwards ease-in-out;
-      animation-delay: 0.5s;
-      opacity: 0;
-    }
-    .hero .btn {
-      display: inline-block;
-      background-color: #079992;
-      padding: 14px 28px;
-      border-radius: 4px;
-      font-weight: 600;
-      color: #fff;
-      transition: background 0.3s, transform 0.3s;
-      animation: fadeInUp 1.5s forwards ease-in-out;
-      animation-delay: 1s;
-      opacity: 0;
-    }
-    .hero .btn:hover {
-      background-color: #065f5b;
-      transform: scale(1.05);
-    }
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* FORBES-STYLE IMAGES SECTION */
-    .news-section {
+    /* ABOUT CONTENT */
+    .about-container {
+      min-height: 100vh;
+      padding: 100px 20px;
       max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    .news-heading {
+      margin: 0 auto;
       text-align: center;
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: #ffd700;
     }
-    .news-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .news-item {
-      background: #222;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
-    }
-    .news-item:hover {
-      transform: scale(1.02);
-    }
-    .news-item img {
-      width: 100%;
-      height: 180px;
+    .about-container img {
+      width: 280px;
+      height: 280px;
       object-fit: cover;
-      display: block;
+      border-radius: 50%;
+      border: 4px solid #ffd700;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      margin-bottom: 30px;
+
+      /* Fades in from left if you want a reveal effect */
+      opacity: 0;
+      transform: translateX(-50px);
+      animation: fadeInLeft 1s forwards ease;
     }
-    .news-content {
-      padding: 15px;
+    @keyframes fadeInLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
-    .news-content h3 {
-      margin-bottom: 10px;
-      font-size: 20px;
+    .about-container h2 {
+      font-size: 32px;
       color: #ffd700;
+      margin-bottom: 20px;
     }
-    .news-content p {
-      font-size: 16px;
-      line-height: 1.4;
+    .about-container p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     /* FOOTER */
@@ -287,14 +198,24 @@
       padding: 5px 10px;
       cursor: pointer;
     }
+
+    /* Light Mode Adjustments */
+    body.light-mode {
+      background: #f2f2f2;
+      color: #000;
+    }
+    body.light-mode .nav-bar {
+      background: rgba(255, 255, 255, 0.8);
+    }
+    body.light-mode .chat-box {
+      background: rgba(0, 0, 0, 0.8);
+    }
+    body.light-mode .about-container img {
+      border: 4px solid #333;
+    }
   </style>
 </head>
 <body>
-  <!-- INTRO SCREEN -->
-  <div class="intro-screen">
-    <h1 class="intro-name">Siddharth Swarup</h1>
-  </div>
-
   <!-- NAV BAR -->
   <div class="nav-bar">
     <div class="logo">Siddharth</div>
@@ -314,65 +235,33 @@
         <li><a href="about.html">About</a></li>
         <li><a href="infoz.html">Infoz</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="mywork.html">Create website
-          
-        </a></li>
+        <li><a href="mywork.html">My Work</a></li>
       </ul>
     </div>
   </div>
 
-  <!-- HERO SECTION -->
-  <section class="hero" id="hero">
-    <h1>Welcome to My World</h1>
-    <p class="quote">
-      “The only limit to our realization of tomorrow is our doubts of today.”<br />
-      – Franklin D. Roosevelt
+  <!-- ABOUT CONTENT -->
+  <div class="about-container">
+    <img src="myphoto.jpg.jpg" alt="Siddharth Swarup" />
+    <h2>About Me</h2>
+    <p>
+      Hello everyone! I am <strong>Siddharth Swarup</strong>, a tech enthusiast fascinated by the
+      ever-evolving world of <strong>AI, Blockchain, and Machine Learning</strong>. I love exploring
+      futuristic technologies and staying ahead in the digital era.
     </p>
-    <a href="about.html" class="btn">Learn More</a>
-  </section>
-
-  <!-- FORBES-STYLE IMAGES SECTION -->
-  <div class="news-section">
-    <h2 class="news-heading">Latest Highlights</h2>
-    <div class="news-grid">
-      <!-- 1st article -->
-      <div class="news-item">
-        <img src="https://source.unsplash.com/random/800x600?technology" alt="Tech" />
-        <div class="news-content">
-          <h3>Breaking Tech</h3>
-          <p>Explore the newest innovations shaping our future, from AI breakthroughs to next-gen robotics.</p>
-        </div>
-      </div>
-      <!-- 2nd article -->
-      <div class="news-item">
-        <img src="https://source.unsplash.com/random/800x600?startup" alt="Startup" />
-        <div class="news-content">
-          <h3>Startup Culture</h3>
-          <p>Dive into the dynamic world of startups, where ideas turn into billion-dollar enterprises.</p>
-        </div>
-      </div>
-      <!-- 3rd article -->
-      <div class="news-item">
-        <img src="https://source.unsplash.com/random/800x600?blockchain" alt="Blockchain" />
-        <div class="news-content">
-          <h3>Blockchain Buzz</h3>
-          <p>Cryptocurrency and decentralized platforms are reshaping finance and the internet at large.</p>
-        </div>
-      </div>
-      <!-- 4th article -->
-      <div class="news-item">
-        <img src="https://source.unsplash.com/random/800x600?innovation" alt="Innovation" />
-        <div class="news-content">
-          <h3>Innovation Spotlight</h3>
-          <p>Learn about creative solutions and inventions making waves across diverse industries.</p>
-        </div>
-      </div>
-    </div>
+    <p>
+      My passion lies in discovering new innovations, automating processes, and building intelligent
+      solutions. Whether it's experimenting with AI models or diving into the world of Web 3.0, my
+      curiosity never fades.
+    </p>
+    <p>
+      Let’s connect and explore the limitless possibilities of technology together!
+    </p>
   </div>
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Siddharth Swarup. All rights reserved. | <a href="#hero">Back to top</a></p>
+    <p>&copy; 2025 Siddharth Swarup. All rights reserved. | <a href=\"index.html\">Back to Home</a></p>
   </footer>
 
   <!-- CHAT BOX -->
@@ -385,10 +274,9 @@
     </div>
   </div>
 
-  <!-- SCRIPTS -->
   <script>
     /*******
-     1. INTRO FADE & TIME
+     1. TIME & DARK MODE
     ******/
     function updateIndiaTime() {
       const now = new Date();
@@ -404,13 +292,9 @@
     setInterval(updateIndiaTime, 1000);
     updateIndiaTime();
 
-    /*******
-     2. DARK MODE TOGGLE
-    ******/
     const themeToggle = document.getElementById('themeToggle');
     themeToggle.addEventListener('click', () => {
       document.body.classList.toggle('light-mode');
-      // Toggle icon between sun/moon
       if (document.body.classList.contains('light-mode')) {
         themeToggle.classList.remove('fa-moon');
         themeToggle.classList.add('fa-sun');
@@ -421,7 +305,7 @@
     });
 
     /*******
-     3. CHAT BOX
+     2. CHAT BOX
     ******/
     function sendMessage() {
       const input = document.getElementById('chatInput');

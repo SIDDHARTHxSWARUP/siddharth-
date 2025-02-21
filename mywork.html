@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>How to Create a Website - Siddharth Swarup</title>  <!-- Google Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome (for icons) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>  <style>
+    /* RESET & GLOBAL */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('background.jpg') no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
+      transition: background 0.5s, color 0.5s;
+    }
+    
+    /* ANIMATIONS */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animated-section {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+    .animated-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* NAVIGATION */
+    .nav-bar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 70px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      z-index: 999;
+      transition: background 0.5s;
+    }
+    
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      animation: fadeInUp 1.5s forwards ease-in-out;
+      opacity: 0;
+    }
+    
+    .content {
+      max-width: 800px;
+      margin: 50px auto;
+      font-size: 18px;
+      line-height: 1.6;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+  </style></head>
+<body>
+  <div class="nav-bar">
+    <div class="logo">Siddharth</div>
+    <div class="nav-links">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Steps</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>  <section class="hero">
+    <h1>How to Create a Website Like Me</h1>
+  </section>  <div class="content animated-section">
+    <p>(I have been working with HTML, CSS, and JavaScript for the past 2-3 years, exploring different ways to create dynamic and interactive web pages. Along with these, I also have experience in Python, which helped me understand backend technologies. Through trial and error, I have built multiple projects, and today, I want to share my journey with you. Uploading a website can be daunting, but using platforms like GitHub Pages, you can do it for free. I personally used GitHub, and it’s a great way to showcase your work. Let’s go through the steps you should follow when creating your own website and uploading it online. Thank you for visiting!)</p><h2>Steps to Create a Website:</h2>
+<ol>
+  <li>Learn HTML for structuring your webpage.</li>
+  <li>Use CSS to style your webpage.</li>
+  <li>Add interactivity using JavaScript.</li>
+  <li>Host your site using platforms like GitHub Pages.</li>
+  <li>Test and maintain your website regularly.</li>
+</ol>
+
+  </div>  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let animatedSections = document.querySelectorAll(".animated-section");
+      let observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, { threshold: 0.1 });
+
+      animatedSections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script></body>
+</html>
+

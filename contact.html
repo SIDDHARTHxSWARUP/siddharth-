@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact - Siddharth Swarup</title>
+  <!-- Fonts & Icons -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    /* Copy the same style from index.html or about.html for consistency */
+    /* We'll just highlight contact-specific styling here. */
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('background.jpg') no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
+      transition: background 0.5s, color 0.5s;
+    }
+    .contact-container {
+      min-height: 100vh;
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .contact-container h2 {
+      font-size: 32px;
+      color: #ffd700;
+      margin-bottom: 30px;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #079992;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 4px;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(7, 153, 146, 0.3);
+      transition: 0.3s;
+      text-decoration: none;
+    }
+    .social-links a:hover {
+      background-color: #065f5b;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV BAR -->
+  <div class="nav-bar" style="position:fixed; top:0; left:0; width:100%; height:70px; background:rgba(0,0,0,0.6); backdrop-filter:blur(8px); display:flex; align-items:center; justify-content:space-between; padding:0 40px; z-index:999;">
+    <div class="logo" style="font-weight:700; font-size:24px; color:#ffd700;">Siddharth</div>
+    <div style="display:flex; align-items:center;">
+      <div class="india-time" style="color:#ffd700; font-weight:600; margin-right:20px;">
+        <img src="india-flag.webp" alt="India Flag" style="width:24px;" />
+        <span id="india-time">Loading...</span>
+      </div>
+      <i class="fas fa-moon theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode" style="color:#ffd700; cursor:pointer;"></i>
+    </div>
+    <div class="nav-links">
+      <ul style="list-style:none; display:flex; gap:30px;">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="infoz.html">Infoz</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="mywork.html">My Work</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CONTACT CONTENT -->
+  <div class="contact-container">
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out through any of the platforms below:</p>
+    <div class="social-links">
+      <a href="mailto:swarupsiddharth470@gmail.com">
+        <i class="fas fa-envelope"></i> Email
+      </a>
+      <a href="https://www.linkedin.com/in/siddharth-swarup-6383b327a/" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://www.instagram.com/siddharth___s_/" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://github.com/SIDDHARTHxSWARUP" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer style="background:#000; color:#aaa; text-align:center; padding:15px; position:relative;">
+    <p>&copy; 2025 Siddharth Swarup. All rights reserved. | <a href="index.html">Back to Home</a></p>
+  </footer>
+
+  <!-- CHAT BOX -->
+  <div class="chat-box" style="position:fixed; bottom:20px; right:20px; width:300px; background:rgba(0,0,0,0.8); color:#fff; border-radius:10px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.3); display:flex; flex-direction:column; z-index:999;">
+    <div class="chat-header" style="background:#079992; padding:10px; text-align:center; font-weight:600;">Chat with Me</div>
+    <div class="chat-body" id="chatBody" style="height:200px; overflow-y:auto; padding:10px; font-size:14px;"></div>
+    <div class="chat-input" style="display:flex; padding:10px; background:rgba(255,255,255,0.1);">
+      <input type="text" id="chatInput" placeholder="Type a message..." style="flex:1; padding:5px; border:none; background:transparent; color:#fff; outline:none;" />
+      <button onclick="sendMessage()" style="background:#079992; border:none; color:#fff; padding:5px 10px; cursor:pointer;">Send</button>
+    </div>
+  </div>
+
+  <script>
+    /* Time & Dark Mode (same as index) */
+    function updateIndiaTime() {
+      const now = new Date();
+      const options = {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      };
+      document.getElementById('india-time').textContent = now.toLocaleString('en-IN', options);
+    }
+    setInterval(updateIndiaTime, 1000);
+    updateIndiaTime();
+
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      if (document.body.classList.contains('light-mode')) {
+        themeToggle.classList.remove('fa-moon');
+        themeToggle.classList.add('fa-sun');
+      } else {
+        themeToggle.classList.remove('fa-sun');
+        themeToggle.classList.add('fa-moon');
+      }
+    });
+
+    function sendMessage() {
+      const input = document.getElementById('chatInput');
+      const message = input.value.trim();
+      if (!message) return;
+      const chatBody = document.getElementById('chatBody');
+      const msgDiv = document.createElement('div');
+      msgDiv.textContent = 'You: ' + message;
+      chatBody.appendChild(msgDiv);
+      input.value = '';
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Infoz - About India</title>
+  <!-- Fonts & Icons -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    /* Similar styling to maintain consistency */
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('background.jpg') no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
+      transition: background 0.5s, color 0.5s;
+      min-height: 100vh;
+    }
+    .nav-bar {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height:70px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      z-index: 999;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 24px;
+      color: #ffd700;
+    }
+    .theme-toggle {
+      color: #ffd700;
+      cursor: pointer;
+      font-size: 20px;
+      margin-left: 20px;
+    }
+    .nav-links ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    .nav-links ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s, transform 0.3s;
+    }
+    .nav-links ul li a:hover {
+      color: #ffd700;
+      transform: scale(1.1);
+    }
+    .infoz-container {
+      max-width: 1000px;
+      margin: 120px auto 40px;
+      padding: 20px;
+      background: rgba(0,0,0,0.5);
+      border-radius: 10px;
+    }
+    .infoz-container h2 {
+      font-size: 32px;
+      color: #ffd700;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .infoz-container p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+    footer {
+      background: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      position: relative;
+    }
+    /* Chat box same as before */
+    .chat-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV BAR -->
+  <div class="nav-bar">
+    <div class="logo">Siddharth</div>
+    <div style="display:flex; align-items:center;">
+      <div class="india-time" style="color:#ffd700; font-weight:600; margin-right:20px;">
+        <img src="india-flag.webp" alt="India Flag" style="width:24px;" />
+        <span id="india-time">Loading...</span>
+      </div>
+      <i class="fas fa-moon theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode"></i>
+    </div>
+    <div class="nav-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="infoz.html">Infoz</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="mywork.html">My Work</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- INFOZ CONTENT -->
+  <div class="infoz-container">
+    <h2>India – A Nation of Diversity and Innovation</h2>
+    <p>
+      Hello, everyone! I am <strong>Siddharth Swarup</strong>, a 17-year-old 11th grader,
+      and I’d like to share my perspective on India, a country that never ceases to amaze
+      me with its vibrant culture, rich history, and forward-looking spirit. India, located
+      in South Asia, is home to over 1.4 billion people, making it the world’s largest
+      democracy. The diversity found here is truly unmatched: from languages and religions
+      to food and festivals, every corner of India has its unique flavor and identity.
+    </p>
+    <p>
+      Historically, India’s civilization dates back thousands of years, contributing
+      significant advancements in mathematics, astronomy, medicine, and philosophy. Our
+      ancestors gave the world the concept of zero and some of the earliest universities,
+      such as Takshashila and Nalanda. Over the centuries, India has been influenced by
+      various rulers, traders, and cultures, resulting in a beautiful tapestry of
+      traditions that coexist to this day.
+    </p>
+    <p>
+      One of the most striking features of India is its unity in diversity. With 22
+      officially recognized languages and hundreds of dialects, it’s not uncommon to hear
+      different tongues spoken as you travel from one state to another. The same diversity
+      can be seen in our festivals—Diwali, Holi, Eid, Christmas, and many more—each
+      celebrated with zeal and joy, reflecting the inclusive spirit that binds us all.
+    </p>
+    <p>
+      In recent decades, India has emerged as a rapidly developing nation with a strong
+      focus on science, technology, and innovation. We are known for our IT hubs,
+      space missions like Chandrayaan and Mangalyaan, and a thriving startup ecosystem.
+      The “Make in India” initiative and the push towards digitalization highlight the
+      government’s commitment to modernizing the country. Today, India is not just a land
+      of ancient wonders but also a rising power in artificial intelligence, software
+      development, and blockchain technology.
+    </p>
+    <p>
+      As a student deeply interested in AI and Machine Learning, I find India’s tech
+      landscape incredibly inspiring. More and more Indian youth are engaging in research
+      and entrepreneurial ventures, seeking solutions for global challenges such as
+      healthcare, education, and climate change. The fact that we can combine our
+      centuries-old wisdom with cutting-edge innovations is what makes India stand out on
+      the world stage.
+    </p>
+    <p>
+      Yet, we face our share of challenges. Poverty, infrastructure gaps, and social
+      inequalities still exist. However, the resilience and collective effort of our
+      people continue to drive us forward. Initiatives to boost rural development,
+      improve literacy, and empower women are gradually reshaping the social fabric of
+      the nation. This duality—steeped in history yet always evolving—captures the essence
+      of India for me.
+    </p>
+    <p>
+      In conclusion, India is a land where the past, present, and future converge in a
+      kaleidoscope of experiences. From ancient temples to modern skyscrapers, from rural
+      heartlands to urban tech parks, the country embodies a unique blend of tradition and
+      progress. As I, Siddharth Swarup, navigate my journey through 11th grade, I remain
+      hopeful that India’s story will continue to be one of innovation, unity, and
+      boundless possibilities. I invite you to explore this incredible nation—its people,
+      heritage, and ambitions—and discover for yourself the vibrant tapestry that makes
+      India truly extraordinary.
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Siddharth Swarup. All rights reserved. | <a href=\"index.html\">Back to Home</a></p>
+  </footer>
+
+  <!-- CHAT BOX -->
+  <div class="chat-box">
+    <div class="chat-header">Chat with Me</div>
+    <div class="chat-body" id="chatBody"></div>
+    <div class="chat-input">
+      <input type="text" id="chatInput" placeholder="Type a message..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    /* TIME & DARK MODE (Same as other pages) */
+    function updateIndiaTime() {
+      const now = new Date();
+      const options = {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      };
+      document.getElementById('india-time').textContent = now.toLocaleString('en-IN', options);
+    }
+    setInterval(updateIndiaTime, 1000);
+    updateIndiaTime();
+
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      if (document.body.classList.contains('light-mode')) {
+        themeToggle.classList.remove('fa-moon');
+        themeToggle.classList.add('fa-sun');
+      } else {
+        themeToggle.classList.remove('fa-sun');
+        themeToggle.classList.add('fa-moon');
+      }
+    });
+
+    function sendMessage() {
+      const input = document.getElementById('chatInput');
+      const message = input.value.trim();
+      if (!message) return;
+      const chatBody = document.getElementById('chatBody');
+      const msgDiv = document.createElement('div');
+      msgDiv.textContent = 'You: ' + message;
+      chatBody.appendChild(msgDiv);
+      input.value = '';
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+  </script>
+</body>
+</html>
